@@ -176,9 +176,57 @@
          
 
             <!-- Text Wrappers -->
-            <div class="absolute h-[14px] top-[100px] left-[217px] font-['Roboto-Regular'] font-normal text-black text-[12px] leading-normal whitespace-nowrap">
-              <img class="absolute w-[30px] h-[30px] top-[-40px] left-1" src="images/Vector.svg" />
-              filter list
+            <div
+        id="filterDiv"
+        class="absolute h-[14px] top-[100px] left-[217px] font-['Roboto-Regular'] font-normal text-black text-[12px] leading-normal whitespace-nowrap cursor-pointer"
+        onclick="toggleFilterList()"
+      >
+        <img
+          class="absolute w-[30px] h-[30px] top-[-40px] left-1"
+          src="images/Vector.svg"
+          alt="Filter Icon"
+        />
+        filter list
+      </div>
+
+      <!-- Dropdown Menu -->
+      <div
+        id="filterDropdown"
+        class="absolute mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg hidden"
+        style="top: 120px; left: 217px;"
+      >
+        <ul class="py-2">
+          <li>
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              >Filtrer par prix</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              >Couleur</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              >Modèle</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+              >Marque</a
+            >
+          </li>
+        </ul>
+      </div>
+    
             </div>
             <div class="absolute h-[14px] top-[100px] left-[130px] font-['Roboto-Regular'] font-normal text-black text-[12px] leading-normal whitespace-nowrap">
               <img class="absolute w-[36px] h-[36px] top-[-45px] left-3" src="images/kids 1.png" />
@@ -349,3 +397,24 @@
     </div>
   </div>
 </div>
+<script>
+  function toggleFilterList() {
+    const filterDropdown = document.getElementById("filterDropdown");
+    filterDropdown.classList.toggle("hidden");
+  }
+
+  // Close the dropdown if clicked outside
+  document.addEventListener("click", (event) => {
+    const filterDiv = document.getElementById("filterDiv");
+    const filterDropdown = document.getElementById("filterDropdown");
+
+    if (
+      !filterDiv.contains(event.target) &&
+      !filterDropdown.contains(event.target)
+    ) {
+      filterDropdown.classList.add("hidden");
+    }
+  });
+</script>
+</body>
+</html>
