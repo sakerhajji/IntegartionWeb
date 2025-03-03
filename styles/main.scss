@@ -1,0 +1,50 @@
+@import 'variables';
+@import 'mixins';
+@import 'button';
+
+body{
+    background-color: $background-color;
+    font-family: $font-stack;
+    height:100vh;
+    color:$text-color;
+    @include flex;
+    @include responsive(mobile){
+        background-color: lightblue;
+    }
+    @include responsive(tablet){
+        background-color: lightgreen;
+    }
+    @include responsive(desktop){
+        background-color: rgb(10, 0, 57);
+    }
+}
+
+.container{
+    @include flex(column);
+}
+////////////////
+
+.profileImg{
+
+    border-radius: $border-radius;
+    @include responsive(mobile){      
+        width:$widthMobile ;
+        height:$heightMobile;
+    }
+    @include responsive(tablet){
+        width:$widthTablet;
+        height:$heightTablet;
+    }
+    @include responsive(desktop){
+        width:$widthDesktop;
+        height:$heightDesktop;
+    }
+}
+
+.profile-info{
+    @include flex(column);
+}
+
+.grop-btn{
+    @include flex(row);
+}

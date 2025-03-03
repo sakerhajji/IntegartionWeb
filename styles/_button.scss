@@ -1,0 +1,29 @@
+@import 'variables';
+
+.button{
+    display: inline-block;
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+}
+
+.btn{
+    @extend .button;
+    color:white;
+
+    &-primary {
+        background-color: $primary-color;
+        
+        &:hover {
+            background-color: darken($primary-color, 20%);
+        }
+    }
+
+    &-secondary{
+        background-color: $secondary-color;
+        
+        &:hover {
+            background-color: darken($secondary-color, 20%);
+        }
+    }
+}
