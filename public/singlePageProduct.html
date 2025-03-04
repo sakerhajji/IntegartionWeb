@@ -82,21 +82,75 @@
     <div class="max-w-7xl mx-auto px-4 py-10">
         <div class="flex flex-col md:flex-row  p-6 rounded-lg">
 <!-- Image du produit -->
-            <div class="relative w-full md:w-1/2 flex flex-col items-center">
-                <div class="relative bg-[#EEE9E6]  p-4 rounded-lg w-full flex justify-center">
-                    <img src="/public/Image/glasses12.png" alt="Lunettes" >
-                    <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white px-4 py-2 md:px-6 md:py-3 rounded">
-                        🕶️ Try On
-                    </button>
-                </div>
-                
-                <div class="flex space-x-2 mt-4">
-                    <span class="w-8 h-8 bg-blue-300 rounded-full border border-gray-400"></span>
-                    <span class="w-8 h-8 bg-black rounded-full border border-gray-400"></span>
-                    <span class="w-8 h-8 bg-yellow-400 rounded-full border border-gray-400"></span>
-                    <span class="w-8 h-8 bg-orange-500 rounded-full border border-gray-400"></span>
-                </div>
-            </div>
+<div class="relative w-full md:w-1/2 flex flex-col items-center">
+    
+    <div class="relative bg-[#EEE9E6] p-4 rounded-lg w-full flex justify-center">
+        
+        <!-- Black Heart Icon (Top-Right) -->
+        <button class="absolute top-2 right-5 text-black text-2xl cursor-pointer hover:text-gray-700">
+            ❤︎
+        </button>
+
+        <!-- Product Image -->
+        <img src="/public/Image/glasses12.png" alt="Lunettes">
+        
+        <!-- Try On Button with 3D Icon on Left -->
+         <button onclick="openModal()" class="absolute bottom-4 right-5 mt text-black text-2xl cursor-pointer mt-[-100px] ">
+            <img src="/public/image/3d-icon.png.png" alt="3D Icon" class="w-9 h-9 ">
+         </button>
+        <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white px-4 py-2 md:px-6 md:py-3 rounded flex items-center">
+             🕶️ Try On
+        </button>
+    </div>
+    
+    <!-- Color Options -->
+    <div class="flex space-x-2 mt-4">
+        <span class="w-8 h-8 bg-blue-300 rounded-full border border-gray-400"></span>
+        <span class="w-8 h-8 bg-black rounded-full border border-gray-400"></span>
+        <span class="w-8 h-8 bg-yellow-400 rounded-full border border-gray-400"></span>
+        <span class="w-8 h-8 bg-orange-500 rounded-full border border-gray-400"></span>
+    </div>
+</div>
+      
+
+<!-- Image Popup Modal -->
+<!-- Image Popup Modal -->
+<div id="popupModal" class="   items-center justify-center bg-black bg-opacity-50 hidden z-50">
+    <div class="bg-[#f8f5f0] p-6 rounded-lg shadow-lg w-[90%] max-w-[700px] max-h-[90%] text-center relative flex flex-col items-center justify-center overflow-auto">
+
+        <!-- Modal Title -->
+        <h2 class="text-2xl font-semibold mb-4">3D Image Preview</h2>
+
+        <!-- Image inside Modal -->
+        <img src="/public/Image/glasses4.png" alt="3D Image" class="w-full h-auto max-h-[500px] rounded-lg">
+
+        <!-- 360 View Button -->
+        <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 cursor-pointer" onclick="closeModal()">
+            <img src="/public/image/icons8-360-50.png" alt="360 View" class="w-12 h-12">
+        </button>
+
+        <!-- Close Button -->
+        <button onclick="closeModal()" class="mt-4 px-6 py-2 bg-red-500 text-white rounded hover:bg-red-700 cursor-pointer">
+            Close
+        </button>
+    </div>
+</div>
+
+<!-- JavaScript for Modal -->
+<script>
+    function openModal() {
+        document.getElementById('popupModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+        document.getElementById('popupModal').classList.add('hidden');
+    }
+</script>
+
+
+    
+   
+
             <!-- Détails du produit -->
             <div class="w-full md:w-1/2 p-6">
                 <h1 class="text-4xl font-bold">Organique (Ray-Ban)</h1>

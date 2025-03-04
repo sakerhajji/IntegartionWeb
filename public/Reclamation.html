@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Réclamation - Lunetti</title>
+    <!-- Tailwind CSS CDN -->
+ <link rel="stylesheet" href="/public/style.css">
+    <!-- Google Fonts: Inter (if desired) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>     
+  <body class="bg-[#F8F5F0] text-black font-['Inter', sans-serif]">
+    <!-- Header -->
+    <header class="py-4 border-b border-gray-200">
+      <div class="max-w-7xl mx-auto flex items-center px-6">
+        <!-- Logo (Left) -->
+        <img src="/public/Image/logo.png" alt="Lunetti Logo" />
+
+        <!-- Desktop Navigation (Centered) -->
+        <nav
+          class="hidden md:flex flex-1 justify-center space-x-6 text-gray-700 font-medium"
+        >
+          <a href="landingPage.html" class="hover:text-black">Home</a>
+          <a href="listeProduits.html" class="hover:text-black">Shop</a>
+          <a href="#" class="hover:text-black">SunGlasses</a>
+          <a href="#" class="hover:text-black">EyeGlasses</a>
+          <a href="reclamation.html" class="hover:text-black text-black"
+            >Reclamation</a
+          >
+        </nav>
+
+        <!-- Icons + Mobile Menu Button (Right) -->
+        <div class="flex items-center space-x-4 ml-auto">
+          <!-- Cart Count -->
+          <span
+            class="text-gray-700 text-lg font-semibold mt-[-10px] mr-[-18px]"
+            >(2)</span
+          >
+          <!-- Cart Icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+          >
+            <path
+              d="M29.44 28.3199C29.4761 28.6406 29.4437 28.9652 29.3452 29.2726C29.2466 29.5798 29.0844 29.8628 28.8686 30.1028C28.6524 30.3423 28.3877 30.5336 28.0924 30.6635C27.7968 30.7935 27.477 30.8596 27.1543 30.8571H4.84576C4.52295 30.8596 4.20329 30.7935 3.90781 30.6635C3.61234 30.5336 3.34775 30.3423 3.13147 30.1028C2.91577 29.8628 2.75335 29.5798 2.65485 29.2726C2.55636 28.9652 2.52404 28.6406 2.56004 28.3199L4.57147 10.2856H27.4286L29.44 28.3199Z"
+              stroke="black"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M10.2858 10.2857V6.85711C10.2858 5.34159 10.8878 3.88813 11.9594 2.81649C13.0311 1.74486 14.4845 1.14282 16.0001 1.14282C17.5156 1.14282 18.969 1.74486 20.0407 2.81649C21.1123 3.88813 21.7143 5.34159 21.7143 6.85711V10.2857"
+              stroke="black"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <!-- User Icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+            fill="none"
+          >
+            <g clip-path="url(#clip0_216_940)">
+              <path
+                d="M15.9999 18.2857C19.1558 18.2857 21.7142 15.7273 21.7142 12.5714C21.7142 9.41551 19.1558 6.85713 15.9999 6.85713C12.844 6.85713 10.2856 9.41551 10.2856 12.5714C10.2856 15.7273 12.844 18.2857 15.9999 18.2857Z"
+                stroke="black"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M6.23987 27.2C7.25985 25.5257 8.69338 24.1419 10.4026 23.1819C12.1119 22.2217 14.0394 21.7173 15.9999 21.7173C17.9603 21.7173 19.8878 22.2217 21.5971 23.1819C23.3064 24.1419 24.7398 25.5257 25.7599 27.2"
+                stroke="black"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M16 30.8571C24.2054 30.8571 30.8571 24.2055 30.8571 16C30.8571 7.79462 24.2054 1.14285 16 1.14285C7.79459 1.14285 1.14282 7.79462 1.14282 16C1.14282 24.2055 7.79459 30.8571 16 30.8571Z"
+                stroke="black"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_216_940">
+                <rect width="32" height="32" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+
+          <!-- Mobile Menu Button -->
+          <button
+            id="menuBtn"
+            class="md:hidden text-black text-2xl focus:outline-none"
+          >
+            ☰
+          </button>
+        </div>
+      </div>
+
+      <!-- Dropdown Mobile Menu -->
+      <div
+        id="menu"
+        class="hidden md:hidden flex-col bg-white shadow-lg mt-2 space-y-4 px-6 py-4"
+      >
+        <a href="#" class="block text-gray-700 text-lg hover:text-black">Home</a>
+        <a href="#" class="block text-gray-700 text-lg hover:text-black">Shop</a>
+        <a
+          href="#"
+          class="block text-gray-700 text-lg hover:text-black"
+          >SunGlasses</a
+        >
+        <a
+          href="#"
+          class="block text-gray-700 text-lg hover:text-black"
+          >EyeGlasses</a
+        >
+        <a
+          href="reclamation.html"
+          class="block text-gray-700 text-lg hover:text-black"
+          >Reclamation</a
+        >
+      </div>
+      <!-- /Dropdown Mobile Menu -->
+    </header>
+    <!-- /Header -->
+
+    <!-- JavaScript for mobile menu toggle -->
+    <script>
+      const menuBtn = document.getElementById("menuBtn");
+      const menu = document.getElementById("menu");
+
+      menuBtn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+        menu.classList.toggle("flex");
+      });
+
+      // Close menu when clicking on a link
+      document.querySelectorAll("#menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menu.classList.add("hidden");
+          menu.classList.remove("flex");
+        });
+      });
+    </script>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-6 py-10">
+      <!-- Title / Heading -->
+      <h1 class="text-3xl md:text-4xl font-bold mb-6">Réclamation</h1>
+
+      <div class="flex flex-col md:flex-row gap-8">
+        <!-- Left Side: Form -->
+        <div class="w-full md:w-1/2 bg-white p-6 rounded-lg shadow-md">
+          <form class="space-y-4">
+            <div>
+              <label for="fullName" class="block text-gray-700 font-medium"
+                >Nom et prénom</label
+              >
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Entrez votre nom et prénom"
+                class="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent"
+              />
+            </div>
+
+            <div>
+              <label for="email" class="block text-gray-700 font-medium"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Entrez votre email"
+                class="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent"
+              />
+            </div>
+
+            <div>
+              <label for="typeReclamation" class="block text-gray-700 font-medium"
+                >Type de réclamation</label
+              >
+              <select
+                id="typeReclamation"
+                name="typeReclamation"
+                class="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent"
+              >
+                <option value="garantie">Garantie</option>
+                <option value="remboursement">Remboursement</option>
+                <option value="echange">Échange</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="details" class="block text-gray-700 font-medium"
+                >Quel est le problème en détails ?</label
+              >
+              <textarea
+                id="details"
+                name="details"
+                rows="4"
+                placeholder="Décrivez votre problème..."
+                class="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-black focus:border-transparent"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="bg-black text-white px-6 py-2 rounded-lg font-medium hover:bg-gray-800 transition-all"
+            >
+              Envoyer
+            </button>
+          </form>
+        </div>
+        <!-- /Left Side: Form -->
+
+        <!-- Right Side: Historique & Suggestions -->
+        <div class="w-full md:w-1/2">
+          <!-- Historique des réclamations -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-4">Historique des réclamations</h2>
+            <!-- 1st reclamation progress -->
+            <div class="mb-4">
+              <p class="font-medium">Reclamation 1: <span>70%</span></p>
+              <div class="w-full bg-gray-200 rounded-full h-4">
+                <div
+                  class="bg-green-500 h-4 rounded-full"
+                  style="width: 70%;"
+                ></div>
+              </div>
+            </div>
+            <!-- 2nd reclamation progress -->
+            <div class="mb-4">
+              <p class="font-medium">Reclamation 2: <span>30%</span></p>
+              <div class="w-full bg-gray-200 rounded-full h-4">
+                <div
+                  class="bg-yellow-400 h-4 rounded-full"
+                  style="width: 30%;"
+                ></div>
+              </div>
+            </div>
+            <!-- 3rd reclamation progress -->
+            <div class="mb-4">
+              <p class="font-medium">Reclamation 3: <span>10%</span></p>
+              <div class="w-full bg-gray-200 rounded-full h-4">
+                <div
+                  class="bg-orange-500 h-4 rounded-full"
+                  style="width: 10%;"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Découvrir de plus ? -->
+          <div class="mt-6 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-4">Découvrir de plus ?</h2>
+            <div class="grid grid-cols-3 gap-4">
+              <!-- Replace with your product images -->
+              <img
+                src="/public/image/glasses4.png"
+                alt="Sunglasses 1"
+                class="rounded-lg bg-[#EEE9E6]"
+              />
+              <img
+                src="/public/image/glasses5.png"
+                alt="Sunglasses 2"
+                class="rounded-lg bg-[#EEE9E6]"
+              />
+              <img
+                src="/public/image/glasses6.png"
+                alt="Sunglasses 3"
+                class="rounded-lg bg-[#EEE9E6]"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- /Right Side -->
+      </div>
+
+      <!-- Chatbot icon (bottom-right) - now clickable -->
+      <a
+        href="chatbot.html"
+        class="fixed bottom-4 right-5 bg-black text-white flex items-center rounded-full px-4 py-2 cursor-pointer hover:bg-gray-800 transition-all"
+      >
+        <!-- Robot Icon (optional) -->
+        <span class="mr-2">🤖</span>
+        <span>Besoin d'aide ?</span>
+      </a>
+    </main>
+    <!-- /Main Content -->
+
+    <!-- Footer -->
+    <footer class="mt-10 py-10 border-t border-gray-200">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center px-6">
+        <!-- First Column: Privacy, About, Terms & Conditions -->
+        <div class="flex flex-col items-center space-y-3">
+          <a href="#" class="text-gray-700 hover:text-black">Privacy</a>
+          <a href="#" class="text-gray-700 hover:text-black">About</a>
+          <a href="#" class="text-gray-700 hover:text-black">Terms & Conditions</a>
+        </div>
+
+        <!-- Second Column: Middle (logo, newsletter) -->
+        <div class="flex flex-col items-center space-y-4 order-last md:order-none">
+          <img src="/public/Image/logo.png" alt="Logo" />
+          <p class="text-gray-500">A Refined Fashion Store</p>
+          <div class="flex items-center space-x-2">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="border px-4 py-2 w-full md:w-auto text-center"
+            />
+            <button class="bg-black text-white px-4 py-2">Subscribe</button>
+          </div>
+        </div>
+
+        <!-- Third Column: Shipping Info, Return, Contact -->
+        <div class="flex flex-col items-center space-y-3">
+          <a href="#" class="text-gray-700 hover:text-black">Shipping Info</a>
+          <a href="#" class="text-gray-700 hover:text-black">Return / Exchanges</a>
+          <a href="#" class="text-gray-700 hover:text-black">Contact</a>
+        </div>
+      </div>
+    </footer>
+    <!-- /Footer -->
+  </body>
+</html>
