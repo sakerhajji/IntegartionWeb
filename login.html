@@ -1,56 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Page</title>
-   <link rel="stylesheet" href="/public/style.css">
-  </head>
-  <body class="flex items-center justify-center min-h-screen bg-[#F8F5F0]">
-    <!-- Login Container -->
-    <div class="bg-white p-8 rounded-2xl shadow-lg w-[400px]">
-      <!-- Title -->
-      <h1 class="text-2xl font-semibold text-gray-700 text-center mb-6">Login</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Page</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    @media (max-width: 640px) {
+      .container {
+        width: 90%;
+        padding: 2rem;
+      }
+    }
 
-      <!-- Form -->
-      <form class="space-y-6">
-        <!-- Email Input -->
-        <div>
-          <label for="email" class="block text-sm font-medium text-gray-600">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter your email"
-            class="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
-          />
-        </div>
+    @media (min-width: 641px) and (max-width: 1024px) {
+      .container {
+        width: 60%;
+      }
+    }
 
-        <!-- Password Input -->
-        <div>
-          <label for="password" class="block text-sm font-medium text-gray-600">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Enter your password"
-            class="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
-          />
-        </div>
+    @media (min-width: 1025px) {
+      .container {
+        width: 400px;
+      }
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-[#F8F5F0]">
+<!-- Login Container -->
+<div class="container bg-white p-8 rounded-2xl shadow-lg">
+  <!-- Title -->
+  <h1 class="text-2xl font-semibold text-gray-700 text-center mb-6">Login</h1>
 
-        <!-- Submit Button -->
-        <a href="landingPage.html" class="w-full block text-center bg-[#FF7F3E] text-white p-2 rounded-lg font-medium hover:bg-[#de6427] transition duration-300">
-          Sign In
-      </a>
-      </form>
-
-      <!-- Additional Links -->
-      <div class="mt-6 text-center">
-        <a href="#" class="text-sm text-gray-600 hover:text-[#de6427]">Forgot password?</a>
-        <p class="mt-2 text-sm text-gray-600">
-          Don't have an account? <a href="register.html" class="text-[#de6427] hover:underline">Sign up</a>
-        </p>
-      </div>
+  <!-- Form -->
+  <form class="space-y-6">
+    <!-- Email Input -->
+    <div>
+      <label for="email" class="block text-sm font-medium text-gray-600">Email</label>
+      <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              class="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
+      />
     </div>
-  </body>
+
+    <!-- Password Input -->
+    <div>
+      <label for="password" class="block text-sm font-medium text-gray-600">Password</label>
+      <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              class="mt-1 block w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-blue-500"
+      />
+    </div>
+
+    <!-- Submit Button -->
+    <a href="index.html" class="w-full block text-center bg-[#FF7F3E] text-white p-2 rounded-lg font-medium hover:bg-[#de6427] transition duration-300">
+      Sign In
+    </a>
+  </form>
+
+  <!-- Additional Links -->
+  <div class="mt-6 text-center">
+    <a href="#" class="text-sm text-gray-600 hover:text-[#de6427]">Forgot password?</a>
+    <p class="mt-2 text-sm text-gray-600">
+      Don't have an account? <a href="register.html" class="text-[#de6427] hover:underline">Sign up</a>
+    </p>
+  </div>
+</div>
+</body>
 </html>
