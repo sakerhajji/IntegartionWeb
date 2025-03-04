@@ -15,11 +15,11 @@
     
             <!-- Desktop Navigation (Centered) -->
             <nav class="hidden md:flex flex-1 justify-center space-x-6 text-gray-700 font-medium">
-                <a href="#" class="hover:text-black">Home</a>
-                <a href="#" class="hover:text-black">Shop</a>
-                <a href="#" class="hover:text-black">SunGlasses</a>
-                <a href="#" class="hover:text-black">EyeGlasses</a>
-                <a href="#" class="hover:text-black">Reclamation</a>
+                <a href="landingPage.html" class="hover:text-black">Home</a>
+                <a href="listeProduits.html" class="hover:text-black">Shop</a>
+                <a href="listeProduits.html" class="hover:text-black">SunGlasses</a>
+                <a href="listeProduits.html" class="hover:text-black">EyeGlasses</a>
+                <a href="Reclamation.html" class="hover:text-black">Reclamation</a>
             </nav>
             
             <!-- Icons + Mobile Menu Button (Right) -->
@@ -51,11 +51,11 @@
     
         <!-- Dropdown Mobile Menu -->
         <div id="menu" class="hidden md:hidden flex-col bg-white shadow-lg mt-2 space-y-4 px-6 py-4">
-            <a href="#" class="block text-gray-700 text-lg hover:text-black">Home</a>
-            <a href="#" class="block text-gray-700 text-lg hover:text-black">Shop</a>
-            <a href="#" class="block text-gray-700 text-lg hover:text-black">SunGlasses</a>
-            <a href="#" class="block text-gray-700 text-lg hover:text-black">EyeGlasses</a>
-            <a href="#" class="block text-gray-700 text-lg hover:text-black">Reclamation</a>
+            <a href="landingPage.html" class="block text-gray-700 text-lg hover:text-black">Home</a>
+            <a href="listeProduits.html" class="block text-gray-700 text-lg hover:text-black">Shop</a>
+            <a href="listeProduits.html" class="block text-gray-700 text-lg hover:text-black">SunGlasses</a>
+            <a href="listeProduits.html" class="block text-gray-700 text-lg hover:text-black">EyeGlasses</a>
+            <a href="Reclamation.html" class="block text-gray-700 text-lg hover:text-black">Reclamation</a>
         </div>
     </header>
     
@@ -87,7 +87,7 @@
     <div class="relative bg-[#EEE9E6] p-4 rounded-lg w-full flex justify-center">
         
         <!-- Black Heart Icon (Top-Right) -->
-        <button class="absolute top-2 right-5 text-black text-2xl cursor-pointer hover:text-gray-700">
+        <button class="absolute top-2 right-5 text-black text-4xl cursor-pointer hover:text-red-700">
             ❤︎
         </button>
 
@@ -96,11 +96,13 @@
         
         <!-- Try On Button with 3D Icon on Left -->
          <button onclick="openModal()" class="absolute bottom-4 right-5 mt text-black text-2xl cursor-pointer mt-[-100px] ">
-            <img src="/public/image/3d-icon.png.png" alt="3D Icon" class="w-9 h-9 ">
+            <img src="/public/image/3d-icon.png.png" alt="3D Icon" class="w-10 h-10 ">
          </button>
+         <a href="/public/camera.html">
         <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white px-4 py-2 md:px-6 md:py-3 rounded flex items-center">
              🕶️ Try On
         </button>
+    </a>
     </div>
     
     <!-- Color Options -->
@@ -113,20 +115,19 @@
 </div>
       
 
-<!-- Image Popup Modal -->
-<!-- Image Popup Modal -->
-<div id="popupModal" class="   items-center justify-center bg-black bg-opacity-50 hidden z-50">
-    <div class="bg-[#f8f5f0] p-6 rounded-lg shadow-lg w-[90%] max-w-[700px] max-h-[90%] text-center relative flex flex-col items-center justify-center overflow-auto">
+<!-- Image Popup Modal (700x700px) -->
+<div id="popupModal" class="fixed inset-0 flex items-center justify-center hidden bg-black bg-opacity-50">
+    <div class="bg-[#f8f5f0] p-6 rounded-lg shadow-lg w-[700px] h-[700px] text-center relative flex flex-col items-center justify-center">
 
         <!-- Modal Title -->
-        <h2 class="text-2xl font-semibold mb-4">3D Image Preview</h2>
+        <h2 class="text-2xl font-semibold mt-20">3D Image Preview</h2>
 
         <!-- Image inside Modal -->
-        <img src="/public/Image/glasses4.png" alt="3D Image" class="w-full h-auto max-h-[500px] rounded-lg">
+        <img src="/public/Image/glasses12.png" alt="3D Image" class="w-full h-auto rounded-lg">
 
         <!-- 360 View Button -->
-        <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 cursor-pointer" onclick="closeModal()">
-            <img src="/public/image/icons8-360-50.png" alt="360 View" class="w-12 h-12">
+        <button class="absolute bottom-4 left-1/2 transform -translate-x-1/2 cursor-pointer">
+            <img src="/public/image/icons8-360-50.png" alt="360 View" class="w-20 h-20">
         </button>
 
         <!-- Close Button -->
@@ -136,16 +137,7 @@
     </div>
 </div>
 
-<!-- JavaScript for Modal -->
-<script>
-    function openModal() {
-        document.getElementById('popupModal').classList.remove('hidden');
-    }
 
-    function closeModal() {
-        document.getElementById('popupModal').classList.add('hidden');
-    }
-</script>
 
 
     
@@ -221,5 +213,15 @@
         </div>
     </footer>
     
+<!-- JavaScript for Modal -->
+<script>
+    function openModal() {
+        document.getElementById('popupModal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+        document.getElementById('popupModal').classList.add('hidden');
+    }
+</script>
 </body>
 </html>
