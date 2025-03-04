@@ -46,6 +46,33 @@ Vous pouvez modifier `tailwind.config.js` pour :
 - Changer les polices dans `extend.fontFamily`
 - Modifier la taille des polices dans `extend.fontSize`
 
+## Déploiement sur GitHub Pages
+
+1. **Installer le package `gh-pages`**
+   ```sh
+   npm install gh-pages --save-dev
+   ```
+
+2. **Ajouter les scripts de déploiement dans `package.json`**
+   ```json
+   "scripts": {
+     "predeploy": "npm run build",
+     "deploy": "gh-pages -d public"
+   }
+   ```
+
+3. **Déployer le projet**
+   ```sh
+   npm run deploy
+   ```
+
+4. **Configurer GitHub Pages**
+   - Aller dans les paramètres du dépôt sur GitHub.
+   - Sous la section `Pages`, sélectionner la branche `gh-pages` comme source.
+   - Enregistrer les modifications.
+
+Votre site sera disponible à l'adresse `https://<votre-nom-utilisateur>.github.io/<nom-du-repo>/`.
+
 ## Scripts disponibles
 
 - **`npm run build`** : Compile les styles Tailwind CSS en temps réel.
