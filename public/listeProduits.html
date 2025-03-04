@@ -4,10 +4,80 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Liste Produits</title>
-    <link rel="stylesheet" href="output.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
   </head>
   <body class="bg-[#f8f5f0]">
+    <header class="py-4 border-b border-gray-200 ">
+        <div class="max-w-7xl mx-auto flex items-center px-6">
+            
+            <!-- Logo (Left) -->
+            <img src="/public/Image/logo.png" alt="Logo" >
+    
+            <!-- Desktop Navigation (Centered) -->
+            <nav class="hidden md:flex flex-1 justify-center space-x-6 text-gray-700 font-medium">
+                <a href="#" class="hover:text-black">Home</a>
+                <a href="#" class="hover:text-black">Shop</a>
+                <a href="#" class="hover:text-black">SunGlasses</a>
+                <a href="#" class="hover:text-black">EyeGlasses</a>
+                <a href="#" class="hover:text-black">Reclamation</a>
+            </nav>
+            
+            <!-- Icons + Mobile Menu Button (Right) -->
+            <div class="flex items-center space-x-4 ml-auto">
+                <span class="text-gray-700 text-lg font-semibold mt-[-10px]  mr-[-18px]">(2)</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path d="M29.44 28.3199C29.4761 28.6406 29.4437 28.9652 29.3452 29.2726C29.2466 29.5798 29.0844 29.8628 28.8686 30.1028C28.6524 30.3423 28.3877 30.5336 28.0924 30.6635C27.7968 30.7935 27.477 30.8596 27.1543 30.8571H4.84576C4.52295 30.8596 4.20329 30.7935 3.90781 30.6635C3.61234 30.5336 3.34775 30.3423 3.13147 30.1028C2.91577 29.8628 2.75335 29.5798 2.65485 29.2726C2.55636 28.9652 2.52404 28.6406 2.56004 28.3199L4.57147 10.2856H27.4286L29.44 28.3199Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10.2858 10.2857V6.85711C10.2858 5.34159 10.8878 3.88813 11.9594 2.81649C13.0311 1.74486 14.4845 1.14282 16.0001 1.14282C17.5156 1.14282 18.969 1.74486 20.0407 2.81649C21.1123 3.88813 21.7143 5.34159 21.7143 6.85711V10.2857" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <g clip-path="url(#clip0_216_940)">
+                        <path d="M15.9999 18.2857C19.1558 18.2857 21.7142 15.7273 21.7142 12.5714C21.7142 9.41551 19.1558 6.85713 15.9999 6.85713C12.844 6.85713 10.2856 9.41551 10.2856 12.5714C10.2856 15.7273 12.844 18.2857 15.9999 18.2857Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M6.23987 27.2C7.25985 25.5257 8.69338 24.1419 10.4026 23.1819C12.1119 22.2217 14.0394 21.7173 15.9999 21.7173C17.9603 21.7173 19.8878 22.2217 21.5971 23.1819C23.3064 24.1419 24.7398 25.5257 25.7599 27.2" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 30.8571C24.2054 30.8571 30.8571 24.2055 30.8571 16C30.8571 7.79462 24.2054 1.14285 16 1.14285C7.79459 1.14285 1.14282 7.79462 1.14282 16C1.14282 24.2055 7.79459 30.8571 16 30.8571Z" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_216_940">
+                            <rect width="32" height="32" fill="white"/>
+                        </clipPath>
+                    </defs>
+                </svg>
+    
+                <!-- Mobile Menu Button (Right) -->
+                <button id="menuBtn" class="md:hidden text-black text-2xl focus:outline-none">
+                    ☰
+                </button>
+            </div>
+        </div>
+    
+        <!-- Dropdown Mobile Menu -->
+        <div id="menu" class="hidden md:hidden flex-col bg-white shadow-lg mt-2 space-y-4 px-6 py-4">
+            <a href="#" class="block text-gray-700 text-lg hover:text-black">Home</a>
+            <a href="#" class="block text-gray-700 text-lg hover:text-black">Shop</a>
+            <a href="#" class="block text-gray-700 text-lg hover:text-black">SunGlasses</a>
+            <a href="#" class="block text-gray-700 text-lg hover:text-black">EyeGlasses</a>
+            <a href="#" class="block text-gray-700 text-lg hover:text-black">Reclamation</a>
+        </div>
+    </header>
+    
+    <!-- JavaScript for Dropdown Menu -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const menu = document.getElementById('menu');
+    
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        });
+    
+        // Close menu when clicking a link
+        document.querySelectorAll('#menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+            });
+        });
+    </script>
     <div class="flex justify-center w-full">
       <div class="bg-[#f8f5f0] w-[1440px] h-[1614px] relative">
         <!-- Overlap Section -->
@@ -237,46 +307,7 @@
             </div>
             
            
-<div class="absolute w-[1044px] h-[62px] top-[-80px] left-[135px]">
-  <div class="absolute w-[991px] h-[62px] top-0 left-0">
-    <!-- Logo -->
-    <div class="absolute w-[146px] h-[62px] top-0 left-0">
-      <div class="absolute top-[4px] left-[3px] font-['Spectral_SC-SemiBold'] font-semibold text-black text-[32px] text-center leading-normal">
-        Lunetti
-      </div>
-    </div>
 
-    <!-- Navigation Links -->
-    <div class="absolute h-[20px] top-[26px] left-[239px] font-['Roboto-Regular'] font-normal text-black text-[16px] text-center leading-normal whitespace-nowrap">
-      Home
-    </div>
-    <div class="absolute h-[20px] top-[26px] left-[356px] font-['Roboto-Regular'] font-normal text-black text-[16px] text-center leading-normal whitespace-nowrap">
-      Shop
-    </div>
-    <div class="absolute h-[20px] top-[26px] left-[466px] font-['Roboto-Regular'] font-normal text-black text-[16px] leading-[20px] whitespace-nowrap">
-      SunGlasses
-    </div>
-    <div class="absolute h-[20px] top-[26px] left-[622px] font-['Roboto-Regular'] font-normal text-black text-[16px] leading-[20px] whitespace-nowrap">
-      EyeGlasses
-    </div>
-    <div class="absolute h-[20px] top-[26px] left-[755px] font-['Roboto-Regular'] font-normal text-black text-[16px] leading-[20px] whitespace-nowrap">
-      Reclamation
-    </div>
-
-    <!-- Shopping Bag Icon -->
-    <img class="absolute w-[32px] h-[32px] top-[18px] left-[953px]" src="images/shopping-bag-hand-bag-2--shopping-bag-purse-goods-item-products.svg" />
-
-    <!-- User Circle Icon -->
-    <img class="absolute w-[32px] h-[32px] top-[21px] left-[1012px]" src="images/user-circle-single--circle-geometric-human-person-single-user.svg" />
-
-    <!-- Cart Counter -->
-    <div class="absolute w-[25px] h-[22px] top-[17px] left-[924px]">
-      <div class="absolute w-[24px] h-[20px] top-[-3px] left-[-3px] font-['Spezia-Medium'] font-medium text-black text-[16px] leading-[20px]">
-        (2)
-      </div>
-    </div>
-  </div>
-</div>
 
 <div class="absolute  top-[1150px] left-[535px] flex items-center gap-4">
   <!-- Previous Button -->
